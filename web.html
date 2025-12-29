@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOUKOUNIFILS.COM - Services Web Professionnels</title>
+<style>
+   /* =============================================================================
+   RESET ET BASE
+   ============================================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =============================================================================
+   LAYOUT PRINCIPAL
+   ============================================================================= */
+.main {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('1.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  /* background: rgba(0,0,0,0.25); /* Optionnel pour clarifier le header */
+}
+
+.icon {
+  width: 200px;
+  height: 70px;
+}
+
+.logo {
+  color: #ff7200;
+  font-size: 35px;
+  font-family: Arial, sans-serif;
+  padding-left: 20px;
+}
+
+.menu {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  height: 70px;
+  min-width: 280px;
+}
+
+ul {
+  display: flex;
+  gap: 62px;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  font-size: 14px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  transition: color 0.4s ease;
+}
+
+ul li a:hover {
+  color: #ff7200;
+}
+
+/* =============================================================================
+   ZONE DE RECHERCHE
+   ============================================================================= */
+.search {
+  width: 330px;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.srch {
+  font-family: 'Times New Roman', serif;
+  width: 200px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid #ff7200;
+  border-right: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px;
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+  outline: none;
+}
+
+.btn {
+  width: 100px;
+  height: 40px;
+  background: #ff7200;
+  border: 2px solid #ff7200;
+  color: #fff;
+  font-size: 15px;
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
+  cursor: pointer;
+  margin-left: 0;
+  transition: background 0.4s ease;
+}
+
+.btn:focus,
+.srch:focus {
+  outline: none;
+}
+
+/* =============================================================================
+   CONTENU PRINCIPAL
+   ============================================================================= */
+.content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+}
+
+.content .par {
+  padding-left: 20px;
+  padding-bottom: 25px;
+  font-family: Arial, sans-serif;
+  letter-spacing: 1.2px;
+  line-height: 1.8;
+  color: #fff;
+}
+
+.content h1 {
+  font-family: 'Times New Roman', serif;
+  font-size: 50px;
+  padding-left: 20px;
+  margin-top: 9px;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.content .cn {
+  width: 160px;
+  height: 40px;
+  background: #ff7200;
+  border: none;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  font-size: 18px;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.content .cn a {
+  text-decoration: none;
+  color: #000;
+  transition: 0.3s ease;
+}
+
+.cn:hover {
+  background-color: #fff;
+}
+
+/* =============================================================================
+   FORMULAIRE
+   ============================================================================= */
+.form {
+  width: 250px;
+  height: 380px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0, rgba(0,0,0,0.8) 50px);
+  position: relative;
+  top: -20px;
+  left: 870px;
+  border-radius: 10px;
+  padding: 25px;
+  color: #ff7200;
+  font-family: sans-serif;
+}
+
+.form input {
+  width: 240px;
+  height: 35px;
+  background: transparent;
+  border-bottom: 1px solid #ff7200;
+  border-right: none;
+  border-left: none;
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-top: 30px;
+  font-family: sans-serif;
+  outline: none;
+}
+
+.form input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 114, 0, 0.5);
+}
+
+.form .link {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.form .link a {
+  text-decoration: none;
+  color: #ff7200;
+}
+
+.btnn {
+  width: 240px;
+  height: 40px;
+  background: #ff7200;
+  margin-top: 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  transition: 0.4s ease;
+}
+
+.btnn:hover {
+  background: #fff;
+  color: #ff7200;
+}
+
+.btnn a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+/* =============================================================================
+   LIENS ET ICÔNES
+   ============================================================================= */
+.liw {
+  padding-top: 15px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.icons a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.icons i,
+.incons i {
+  color: #fff;
+  font-size: 30px;
+  padding-left: 14px;
+  padding-top: 5px;
+  transition: 0.3s ease;
+}
+
+.icons i:hover,
+.incons i:hover {
+  color: #ff7200;
+}
+
+/* =============================================================================
+   STYLES COMMERCIAUX (TARIFS, ETC.)
+   ============================================================================= */
+.pricing-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.pricing-item {
+  border: 1px solid #ff7200;
+  padding: 20px;
+  text-align: center;
+}
+
+.price {
+  font-size: 24px;
+  color: #ff7200;
+}
+
+/* =============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================= */
+@media (max-width: 1024px) {
+  .form {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .content {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 720px) {
+  ul {
+    gap: 20px;
+  }
+  .logo {
+    font-size: 28px;
+    padding-left: 10px;
+  }
+  .menu {
+    width: auto;
+  }
+  .search {
+    width: 100%;
+    margin: 12px 0 0 0;
+  }
+  .form {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 340px;
+  }
+  .content {
+    font-size: 16px;
+  }
+  .content h1 {
+    font-size: 40px;
+  }
+}
+</style>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">GOUKOUNIFILS</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#apropos">À propos</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#tarifs">Tarifs</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Rechercher un service">
+                <a href="#"><button class="btn">Recherche</button></a>
+            </div>
+        </div>
+        <div id="accueil" class="content">
+            <h1>Conception Web & <br><span>Développement</span><br>Professionnel</h1>
+            <p class="par"><br>GOUKOUNIFILS.COM : Votre partenaire pour des sites web modernes, performants et sur mesure. <br>Découvrez nos services et boostez votre business en ligne.</p>
+            <button class="cn"><a href="#tarifs">Voir les Tarifs</a></button>
+            <div class="form">
+                <h2>Demander un Devis</h2>
+                <input type="email" name="email" placeholder="Votre email">
+                <input type="text" name="service" placeholder="Type de service souhaité">
+                <button class="btnn"><a href="#">Envoyer la Demande</a></button>
+                <p class="link">Besoin d'aide ?</p><br>
+                <a href="#contact">Contactez-nous</a>
+                <p class="liw">Suivez-nous sur</p>
+                <div class="icons">
+                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-whatsapp"></ion-icon></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section À propos -->
+    <section id="apropos" class="section">
+        <div class="container">
+            <h2>À propos de GOUKOUNIFILS</h2>
+            <p>GOUKOUNIFILS est une entreprise spécialisée en conception et développement de sites web. Avec une équipe expérimentée, nous offrons des solutions digitales adaptées à vos besoins : sites vitrines, e-commerce, applications web. Notre mission : rendre votre présence en ligne efficace et rentable.</p>
+            <div class="skills">
+                <h3>Nos Expertises</h3>
+                <ul>
+                    <li>HTML5 & CSS3</li>
+                    <li>JavaScript & Frameworks (React, Vue)</li>
+                    <li>Backend (Node.js, Express)</li>
+                    <li>Design UI/UX</li>
+                    <li>SEO et optimisation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Services -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2>Nos Services</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h3>Conception Web</h3>
+                    <p>Création de sites web responsives et modernes, adaptés à tous les appareils.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Développement d'Applications</h3>
+                    <p>Développement d'applications web interactives avec les dernières technologies.</p>
+                </div>
+                <div class="service-item">
+                    <h3>E-commerce</h3>
+                    <p>Solutions complètes pour vendre en ligne : boutiques, paiements sécurisés.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Maintenance et Support</h3>
+                    <p>Support technique et mises à jour pour vos projets existants.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nouvelle Section Tarifs -->
+    <section id="tarifs" class="section">
+        <div class="container">
+            <h2>Nos Tarifs</h2>
+            <div class="pricing-grid">
+                <div class="pricing-item">
+                    <h3>Forfait Basique</h3>
+                    <p>Site vitrine simple</p>
+                    <span class="price">500 000 FCFA</span>
+                    <ul>
+                        <li>5 pages</li>
+                        <li>Design responsive</li>
+                        <li>Formulaire de contact</li>
+                    </ul>
+                    <button class="btn-submit"><a href="#contact">Commander</a></button>
+                </div>
+                <div class="pricing-item">
+                    <h3>Forfait Pro</h3>
+                    <p>Site e-commerce</p>
+                    <span class="price">1 500 000 FCFA</span>
+                    <ul>
+                        <li>Jusqu'à 20 pages</li>
+                        <li>Panier d'achat</li>
+                        <li>Intégration paiement</li>
+                    </ul>
+                    <button class="btn-submit"><a href="#contact">Commander</a></button>
+                </div>
+                <div class="pricing-item">
+                    <h3>Forfait Entreprise</h3>
+                    <p>Application web complète</p>
+                    <span class="price">Sur devis</span>
+                    <ul>
+                        <li>Fonctionnalités sur mesure</li>
+                        <li>Base de données</li>
+                        <li>Support 6 mois</li>
+                    </ul>
+                    <button class="btn-submit"><a href="#contact">Demander Devis</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Conception (renommée Portfolio) -->
+    <section id="conception" class="section">
+        <div class="container">
+            <h2>Nos Réalisations</h2>
+            <p>Découvrez quelques-uns de nos projets clients :</p>
+            <div class="portfolio">
+                <div class="project">
+                    <h4>Site E-commerce</h4>
+                    <p>Un site de vente en ligne avec panier intégré et paiement sécurisé.</p>
+                    <img src="placeholder.jpg" alt="Projet 1" style="width:100%; max-width:300px;">
+                </div>
+                <div class="project">
+                    <h4>Portfolio d'Artiste</h4>
+                    <p>Un portfolio interactif avec animations et design moderne.</p>
+                    <img src="placeholder.jpg" alt="Projet 2" style="width:100%; max-width:300px;">
+                </div>
+                <div class="project">
+                    <h4>Application de Gestion</h4>
+                    <p>Une app web pour gérer des tâches avec base de données.</p>
+                    <img src="placeholder.jpg" alt="Projet 3" style="width:100%; max-width:300px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nouvelle Section Témoignages -->
+    <section id="temoignages" class="section">
+        <div class="container">
+            <h2>Témoignages Clients</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>"GOUKOUNIFILS a transformé notre site ! Excellent travail."</p>
+                    <cite>- Client 1</cite>
+                </div>
+                <div class="testimonial">
+                    <p>"Service rapide et professionnel. Je recommande !"</p>
+                    <cite>- Client 2</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contactez-nous</h2>
+            <form class="contact-form">
+                <input type="text" name="name" placeholder="Votre nom" required>
+                <input type="email" name="email" placeholder="Votre email" required>
+                <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
+                <button type="submit" class="btn-submit">Envoyer</button>
+            </form>
+            <div class="contact-info">
+                <p>Email : ahmatchahatagoukouni@gmail.com</p>
+                <p>Téléphone : +235 62275646</p>
+                <p>Adresse : N'Djamena, Tchad</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 GOUKOUNIFILS.COM - Tous droits réservés.</p>
+            <div class="social-links">
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-whatsapp"></ion-icon></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        // Script pour le formulaire de contact
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre message ! Nous vous répondrons bientôt.');
+        });
+
+        // Script pour la recherche
+        document.querySelector('.btn').addEventListener('click', function() {
+            const query = document.querySelector('.srch').value;
+            if (query) {
+                alert('Recherche pour : ' + query);
+            } else {
+                alert('Veuillez entrer un terme de recherche.');
+            }
+        });
+    </script>
+</body>
+</html>
